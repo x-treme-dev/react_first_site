@@ -1,1 +1,12 @@
- 
+ .menu{
+    padding: 0;
+ }
+
+ .content, .menu{
+   display: flex;
+   justify-content: center;
+ }
+
+ .aside, .main , .emptyblock{
+   width: 30vw;
+ }

@@ -1,0 +1,16 @@
+.header__ul{
+    display: flex;
+    justify-content: left;
+    gap: 40px;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.header__li{
+    color:black;
+}
+
+.header__li:hover{
+    color: #5499c7;    
+}

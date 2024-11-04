@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './Sidebar.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// создать массив новостей
+const newsData = [
+  { id: 1, title: "Techno news 1", content: "Content 1" },
+  { id: 2, title: "Techno news 2", content: "Content 2" },
+  { id: 3, title: "Techno news 3", content: "Content 3" },
+  { id: 4, title: "Techno news 4", content: "Content 4" },
+  { id: 5, title: "Techno news 5", content: "Content 5" },
+];
 
+// задать шаблон
+const NewsItem = ({ title, content }) => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="news-item">
+      <a href="#" className="news-item__a">
+      <h3>{title}</h3>
+      </a>
+      <p>{content}</p>
+    </div>
+  );
+};
 
-export default App
+// вывести через компонент и функцию map
+const Sidebar = () => {
+  return (
+    <aside>
+      <h2>Techo news</h2>
+      {newsData.map(news => (
+        <NewsItem key={news.id} title={news.title} content={news.content} />
+      ))}
+    </aside>
+  );
+};
+
+
+
+export default Sidebar
